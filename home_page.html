@@ -212,6 +212,28 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    updateRowNumbers("#results");
+    updateRowNumbers("#results_1");
+
+    document.querySelector("#results").addEventListener("click", function() {
+      updateRowNumbers("#results");
+    });
+
+    document.querySelector("#results_1").addEventListener("click", function() {
+      updateRowNumbers("#results_1");
+    });
+  });
+
+  function updateRowNumbers(tableId) {
+    const rows = document.querySelectorAll(`${tableId} tbody tr`);
+    rows.forEach((row, index) => {
+      row.querySelector("td").innerText = index + 1;
+    });
+  }
+</script>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function() {
     updateRowNumbers();
     document.querySelector("#results").addEventListener("click", updateRowNumbers);
   });
@@ -233,7 +255,7 @@
       row.querySelector("td").innerText = index + 1;
     });
   }
-</script>
+</script> -->
 
 <section class="section">
   <div class="container">
