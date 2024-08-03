@@ -210,17 +210,15 @@
 </div>
 </section>
 
+
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     updateRowNumbers("#results");
     updateRowNumbers("#results_1");
 
-    document.querySelector("#results").addEventListener("click", function() {
-      updateRowNumbers("#results");
-    });
-
-    document.querySelector("#results_1").addEventListener("click", function() {
-      updateRowNumbers("#results_1");
+    document.querySelectorAll("#results, #results_1").forEach(table => {
+        table.addEventListener("click", () => updateRowNumbers(table.id));
     });
   });
 
