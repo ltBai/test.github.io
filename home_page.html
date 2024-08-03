@@ -221,6 +221,17 @@
     rows.forEach((row, index) => {
       row.querySelector("td").innerText = index + 1;
     });
+  } 
+  document.addEventListener("DOMContentLoaded", function() {
+    updateRowNumbers();
+    document.querySelector("#results_1").addEventListener("click", updateRowNumbers);
+  });
+
+  function updateRowNumbers() {
+    const rows = document.querySelectorAll("#results_1 tbody tr");
+    rows.forEach((row, index) => {
+      row.querySelector("td").innerText = index + 1;
+    });
   }
 </script>
 
