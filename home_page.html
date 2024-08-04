@@ -718,8 +718,16 @@
 /*                 align-items: center; */
             }
             .video-container {
-                max-width: 200px;
-                margin: 0 auto;
+                position: relative;
+                width: max-content;
+                /* Adjust width to fit the video */
+            }
+            
+            video {
+                display: block;
+                /* Removes bottom margin/gap */
+                width: 100%;
+                /* Responsive video width */
             }
             .arrow {
                 cursor: pointer;
