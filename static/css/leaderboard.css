@@ -6,7 +6,7 @@ table {
 th {
     padding: 2px 5px;
     border: 1px solid black;
-} 
+}
 
 td {
     padding: 2px 5px;
@@ -85,5 +85,5 @@ table#results.js-sort-14 tbody tr td:nth-child(15) {
 
 .best-score-text {
     color: #C6011F
-        /* color: #3457D5 */
+    /* color: #3457D5 */
 }
