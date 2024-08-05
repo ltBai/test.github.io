@@ -724,7 +724,7 @@
             }
             
             video {
-                display: block;
+                display: flex;
                 /* Removes bottom margin/gap */
                 width: 100%;
                 /* Responsive video width */
@@ -752,17 +752,17 @@
             const prevButton = document.getElementById('prev');
             const nextButton = document.getElementById('next');
     
-            prevButton.addEventListener('click', () => {
-                currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
-                videoElement.src = videos[currentVideoIndex];
-                videoElement.play();
-            });
+            // prevButton.addEventListener('click', () => {
+            //     currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+            //     videoElement.src = videos[currentVideoIndex];
+            //     videoElement.play();
+            // });
     
-            nextButton.addEventListener('click', () => {
-                currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-                videoElement.src = videos[currentVideoIndex];
-                videoElement.play();
-            });
+            // nextButton.addEventListener('click', () => {
+            //     currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            //     videoElement.src = videos[currentVideoIndex];
+            //     videoElement.play();
+            // });
         </script>
 
 
