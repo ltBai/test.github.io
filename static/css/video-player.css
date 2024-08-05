@@ -19,7 +19,7 @@ video {
     height: auto;
 }
 
-/* .control-button {
+.control-button {
     background-color: white;
     border: none;
     color: black;
@@ -35,51 +35,4 @@ video {
 
 .control-button:hover {
     transform: scale(1.1);
-} */
-
-/* 自定义播放按钮 */
-.control-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    background-color: rgba(255, 60, 60, 0.8);
-    /* 半透明红色背景 */
-    border-radius: 50%;
-    /* 圆形按钮 */
-    width: 60px;
-    /* 按钮宽度 */
-    height: 60px;
-    /* 按钮高度 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-    /* 添加阴影 */
-    transition: all 0.3s ease;
-    /* 添加过渡效果 */
-}
-
-.control-button:hover {
-    background-color: rgba(255, 60, 60, 1);
-    /* 鼠标悬停时的背景颜色 */
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
-    /* 鼠标悬停时的阴影 */
-}
-
-.control-button::before {
-    content: "\25BA";
-    /* 使用一个不同的Unicode播放图标 */
-    font-size: 24px;
-    color: #ffffff;
-    /* 图标颜色改为白色 */
-    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    /* 添加文字阴影 */
-    transition: all 0.3s ease;
-    /* 添加过渡效果 */
-    line-height: 60px;
-    /* 调整图标的垂直位置 */
-    letter-spacing: -3px;
-    /* 调整图标的水平位置 */
 }
