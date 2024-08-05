@@ -712,45 +712,45 @@
           - indicates closed-source models
         </p>
   
-        <style>
-            .carousel {
+<!--         <style>
+/*             .carousel {
                 display: flex;
 /*                 align-items: center; */
-            }
+            } */
             .video-container {
                 position: relative;
                 width: max-content;
                 /* Adjust width to fit the video */
             }
             
-            video {
+/*             video {
                 display: flex;
                 /* Removes bottom margin/gap */
                 width: 100%;
                 /* Responsive video width */
-            }
+            } */
             .arrow {
                 cursor: pointer;
                 font-size: 24px;
                 user-select: none;
             }
-        </style>  
-        <div class="carousel">
-            <div class="arrow" id="prev">&#x3C;</div>
-            <div class="video-container">
-                <video id="video" controls width="250">
-                    <source src="video1.mp4" type="video/mp4"> 
-                </video>
-            </div> 
-        </div>
+        </style>   -->
+<!--         <div class="carousel"> -->
+<!--           <div class="arrow" id="prev">&#x3C;</div> -->
+          <div class="video-container">
+              <video id="video" controls width="250">
+                  <source src="video1.mp4" type="video/mp4"> 
+              </video>
+          </div> 
+<!--         </div> -->
     
         <script>
             const videos = ["video1.mp4", "video2.mp4", "video3.mp4"]; // 视频文件路径数组
             let currentVideoIndex = 0;
     
             const videoElement = document.getElementById('video');
-            const prevButton = document.getElementById('prev');
-            const nextButton = document.getElementById('next');
+            // const prevButton = document.getElementById('prev');
+            // const nextButton = document.getElementById('next');
     
             // prevButton.addEventListener('click', () => {
             //     currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
