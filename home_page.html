@@ -231,7 +231,7 @@
 
 
 
-  <script>
+  <!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
       updateRowNumbers("#results");
       updateRowNumbers("#results_1");
@@ -249,6 +249,20 @@
       });
     }
 
+  </script> -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      updateRowNumbers();
+      document.querySelector("#results").addEventListener("click", updateRowNumbers);
+    });
+
+    function updateRowNumbers() {
+      const rows = document.querySelectorAll("#results tbody tr");
+      rows.forEach((row, index) => {
+        row.querySelector("td").innerText = index + 1;
+      });
+    }
   </script>
 
   <section class="section">
@@ -793,7 +807,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="container">
 
       <div class="columns is-centered">
@@ -1303,9 +1317,9 @@
               <strong style="color: #22a56e; font-size: 18px;">Green date</strong> indicates the newly added/updated
               models &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               - indicates closed-source models
-            </p>
+            </p> -->
 
-            <!-- <table class="js-sort-table" id="results_1" style="margin-left: auto; margin-right: auto;">
+  <!-- <table class="js-sort-table" id="results_1" style="margin-left: auto; margin-right: auto;">
               <thead>
                 <tr>
                   <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px;"
@@ -1404,7 +1418,7 @@
               </tbody>
             </table> -->
 
-            <p style=" text-align: left;">
+  <!-- <p style=" text-align: left;">
               1* The short and medium videos are sampled at 1 fps, while the long videos are sampled at 2 fps to ensure
               the stability of the API.
               </br>2* The videos less than 384 seconds are sampled at 1 fps, and for those longer than 384 seconds, we
@@ -1419,7 +1433,7 @@
       </div>
 
     </div>
-  </section>
+  </section> -->
 
   <!-- DATASET SECTION -->
   <section class="hero is-light is-small">
