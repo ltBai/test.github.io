@@ -10,7 +10,7 @@
 }
 
 .shipin video {
-  min-width: 100%;
+  min-width: 80%;
   margin: 0 5px;
 }
 
@@ -25,9 +25,9 @@
 }
 
 .button.left {
-  left: 10px;
+  left: 30px;
 }
 
 .button.right {
-  right: 10px;
+  right: 30px;
 }
