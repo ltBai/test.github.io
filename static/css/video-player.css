@@ -7,6 +7,7 @@
 }
 
 .carousel-1 {
+  width: 100%;
   display: flex;
   position: relative;
   transition: transform 0.3s ease-in-out;
