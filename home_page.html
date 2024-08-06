@@ -229,19 +229,27 @@
     </div>
   </section>
 
-  <!-- <script>
+
+
+  <script>
     document.addEventListener("DOMContentLoaded", function () {
-      updateRowNumbers();
-      document.querySelector("#results").addEventListener("click", updateRowNumbers);
+      updateRowNumbers("#results");
+      updateRowNumbers("#results_1");
+
+      document.querySelectorAll("#results, #results_1").forEach(table => {
+        table.addEventListener("click", () => updateRowNumbers(table.id));
+      });
     });
 
-    function updateRowNumbers() {
-      const rows = document.querySelectorAll("#results tbody tr");
+    function updateRowNumbers(tableId) {
+      const table = document.querySelector(`#${tableId}`);
+      const rows = table.querySelectorAll("tbody tr");
       rows.forEach((row, index) => {
         row.querySelector("td").innerText = index + 1;
       });
     }
-  </script> -->
+
+  </script>
 
   <section class="section">
     <div class="container">
@@ -865,25 +873,7 @@
           </div>
 
         </div>
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            updateRowNumbers("#results");
-            updateRowNumbers("#results_1");
 
-            document.querySelectorAll("#results, #results_1").forEach(table => {
-              table.addEventListener("click", () => updateRowNumbers(table.id));
-            });
-          });
-
-          function updateRowNumbers(tableId) {
-            const table = document.querySelector(`#${tableId}`);
-            const rows = table.querySelectorAll("tbody tr");
-            rows.forEach((row, index) => {
-              row.querySelector("td").innerText = index + 1;
-            });
-          }
-
-        </script>
       </div>
 
     </div>
