@@ -800,6 +800,7 @@
 
   <section>
     <div class="carousel-container">
+      <button class="button prev" onclick="scrollCarousel(-1)">&#10094;</button>
       <div class="carousel-1">
         <div class="video-wrapper">
           <video src="00105.mp4" class="slider-item" controls></video>
@@ -811,8 +812,8 @@
           <video src="00105.mp4" class="slider-item" controls></video>
         </div>
       </div>
-      <button class="button-video pre" onclick="scrollCarousel(-1)">&#10094;</button>
-      <button class="button-video next" onclick="scrollCarousel(1)">&#10095;</button>
+
+      <button class="button next" onclick="scrollCarousel(1)">&#10095;</button>
 
 
     </div>
@@ -820,11 +821,12 @@
 
 
   <script>
-    let currentIndex = 1; // 初始显示第二个视频
+    let currentIndex = 1; // 初始显示第二个视频（居中）
 
     function scrollCarousel(direction) {
       const carousel = document.querySelector('.carousel');
       const videos = document.querySelectorAll('.video-wrapper');
+      const videoElements = document.querySelectorAll('.slider-item');
 
       // 计算新的索引
       currentIndex += direction;
@@ -832,20 +834,23 @@
       if (currentIndex >= videos.length) currentIndex = 0;
 
       // 移动到新的视频
-      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      const offset = currentIndex * -33.33;
+      carousel.style.transform = `translateX(${offset}%)`;
 
-      // 更新视频的激活状态
-      videos.forEach((video, index) => {
+      // 更新视频的播放状态
+      videoElements.forEach((videoElement, index) => {
         if (index === currentIndex) {
-          video.classList.add('active');
+          videoElement.play();
         } else {
-          video.classList.remove('active');
+          videoElement.pause();
+          videoElement.currentTime = 0; // 重置视频到开始
         }
       });
     }
 
-    // 初始设置激活视频
-    document.querySelectorAll('.video-wrapper')[currentIndex].classList.add('active');
+    // 初始设置中间视频播放
+    document.querySelectorAll('.slider-item')[currentIndex].play();
+
   </script>
 
   <section class="section">
