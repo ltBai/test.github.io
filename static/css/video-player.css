@@ -6,7 +6,7 @@
   margin-right: 20%;
 }
 
-.carousel {
+.carousel-1 {
   display: flex;
   position: relative;
   transition: transform 0.3s ease-in-out;
@@ -14,7 +14,7 @@
   margin-right: 0;
 }
 
-.carousel video {
+.carousel-1 video {
   min-width: 60%;
   position: relative;
   margin-left: 20%;
