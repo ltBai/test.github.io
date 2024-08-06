@@ -2,15 +2,21 @@
   width: 100%;
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel {
   display: flex;
   transition: transform 0.3s ease-in-out;
+  margin: 0 20%;
+  /* 调整左右间距 */
 }
 
 .carousel video {
-  min-width: 100%;
+  width: 60%;
+  /* 每个视频占据60% */
   margin: 0 5px;
 }
 

@@ -866,19 +866,27 @@
       </div>
     </div>
     <script>
-      let currentIndex = 1;
+      let currentIndex = 0;
 
       function moveCarousel(direction) {
         const carousel = document.getElementById('carousel');
         const videos = carousel.querySelectorAll('video');
         const totalVideos = videos.length;
         currentIndex = (currentIndex + direction + totalVideos) % totalVideos;
-        const offset = -currentIndex * (videos[0].offsetWidth); // 10 是两个视频间的 margin
+        updateCarouselPosition();
+      }
+
+      function updateCarouselPosition() {
+        const carousel = document.getElementById('carousel');
+        const videos = carousel.querySelectorAll('video');
+        const offset = -currentIndex * (videos[0].offsetWidth + 10) + (carousel.parentNode.offsetWidth - videos[0].offsetWidth) / 2;
         carousel.style.transform = `translateX(${offset}px)`;
       }
 
-      window.addEventListener('resize', () => moveCarousel(0)); // 确保在窗口大小改变时，位置正确
+      window.addEventListener('resize', updateCarouselPosition);
+      window.addEventListener('load', updateCarouselPosition);
     </script>
+
 
     <!-- <div class="container">
       <div class="columns is-centered has-text-centered">
