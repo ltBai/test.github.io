@@ -4,7 +4,12 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
+th {
+    padding: 2px 5px;
+    border: 1px solid black;
+}
+
+td {
     padding: 2px 5px;
     border: 1px solid black;
 }
@@ -14,7 +19,8 @@ thead {
 }
 
 /* 表格默认样式 */
-#results, #results_1 {
+#results,
+#results_1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     border-collapse: collapse;
@@ -25,7 +31,8 @@ thead {
     margin-bottom: 2em;
 }
 
-#results th, #results_1 th {
+#results th,
+#results_1 th {
     border: 1px solid #ddd;
     padding: 8px;
     padding-top: 12px;
@@ -37,16 +44,19 @@ thead {
     color: white;
 }
 
-#results td, #results_1 td {
+#results td,
+#results_1 td {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#results tr:nth-child(even), #results_1 tr:nth-child(even) {
+#results tr:nth-child(even),
+#results_1 tr:nth-child(even) {
     background-color: #f5f5f5;
 }
 
-#results tr:hover, #results_1 tr:hover {
+#results tr:hover,
+#results_1 tr:hover {
     background-color: #ddd;
 }
 
@@ -85,12 +95,14 @@ thead {
 }
 
 /* 鼠标悬停样式 */
-.js-sort-number:hover, .js-sort:hover {
+.js-sort-number:hover,
+.js-sort:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
 /* 特定文本样式 */
 .best-score-text {
-    color: #C6011F; /* 添加分号 */
+    color: #C6011F;
+    /* 添加分号 */
 }
