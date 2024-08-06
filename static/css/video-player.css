@@ -1,39 +1,24 @@
-/* .carousel-container {
-  width: 50%;
+.carousel-container {
+  width: 100%;
   overflow: hidden;
   position: relative;
-  margin-left: 25%;
-  margin-right: 0%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-.carousel-1 {
-  width: 100%;
+.carousel {
   display: flex;
-  position: relative;
   transition: transform 0.3s ease-in-out;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-.video-wrapper {
-  flex: 0 0 33.33%; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
+.carousel video {
+  min-width: 60%;
+  margin: 0 0;
 }
 
-.video-wrapper.active {
-  flex: 0 0 100%;
-  opacity: 1;
-}
-
-.slider-item {
-  width: 80%; 
-}
-
-.button-video {
+.video-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -43,156 +28,10 @@
   padding: 10px;
 }
 
-.button-video-pre {
+.video-button.left {
   left: 10px;
 }
 
-.button-video-next {
+.video-button.right {
   right: 10px;
-} */
-
-.teaching-video {
-  background-color: #ffffff;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.teaching-video .tea-video-title {
-  margin: 20px auto 50px;
-}
-
-.teaching-video .tea-video-title .tea-video-h1 {
-  font-size: 30px;
-  color: #ef7700;
-  height: 50px;
-  line-height: 50px;
-}
-
-.teaching-video .tea-video-title .tea-video-h3 {
-  font-size: 16px;
-  color: #666666;
-}
-
-.teaching-video .tea-video-cont {
-  margin-bottom: 50px;
-}
-
-.teaching-video li {
-  list-style: none;
-}
-
-.video {
-  width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-  zoom: 1;
-  background: #ffffff;
-}
-
-.video>div {
-  float: left;
-  height: 400px;
-}
-
-.video>div:first-child {
-  width: 5%;
-  background: url(../images/video-btn-l.png) center center no-repeat;
-}
-
-.video>div:last-child {
-  width: 5%;
-  background: url(../images/video-btn-r.png) center center no-repeat;
-}
-
-.video>div:nth-of-type(2) {
-  width: 90%;
-}
-
-.video ul {
-  position: relative;
-}
-
-.video li {
-  transition: all .6s;
-  position: absolute;
-  background: url(../images/video-bg.png) center center no-repeat;
-  background-size: 100% 100%;
-}
-
-/*.video li>div{padding: 1% 1% 4%;}*/
-.video li video {
-  width: 100%;
-  height: 100%;
-}
-
-.video li h3 {
-  text-align: center;
-  margin-top: 2px;
-  color: #1766d7;
-}
-
-.video li:nth-of-type(1) video {
-  background: url(../images/video03.jpg) no-repeat;
-  background-size: cover;
-}
-
-.video li:nth-of-type(2) video {
-  background: url(../images/video01.jpg) no-repeat;
-  background-size: cover;
-}
-
-.video li:nth-of-type(3) video {
-  background: url(../images/video02.jpg) no-repeat;
-  background-size: cover;
-}
-
-.video li:nth-of-type(4) video {
-  background: url(../images/video03.jpg) no-repeat;
-  background-size: cover;
-}
-
-.video li:nth-of-type(5) video {
-  background: url(../images/video01.jpg) no-repeat;
-  background-size: cover;
-}
-
-.video1 {
-  width: 200px;
-  height: 100px;
-  top: 143px;
-  left: 0;
-  z-index: 1;
-}
-
-/*创建5个播放框初始位置类，可自行更改*/
-.video2 {
-  width: 400px;
-  height: 200px;
-  top: 86px;
-  left: 90px;
-  z-index: 2;
-}
-
-.video3 {
-  width: 700px;
-  height: 350px;
-  top: 0px;
-  left: 190px;
-  z-index: 3;
-}
-
-.video4 {
-  width: 400px;
-  height: 200px;
-  top: 86px;
-  left: 590px;
-  z-index: 2;
-}
-
-.video5 {
-  width: 200px;
-  height: 100px;
-  top: 143px;
-  left: 880px;
-  z-index: 1;
 }
