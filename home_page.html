@@ -797,61 +797,6 @@
       </h1>
     </div>
   </section>
-<!-- 
-  <section>
-    <div class="carousel-container">
-      <button class="button prev" onclick="scrollCarousel(-1)">&#10094;</button>
-      <div class="carousel-1">
-        <div class="video-wrapper">
-          <video src="00105.mp4" class="slider-item" controls></video>
-        </div>
-        <div class="video-wrapper">
-          <video src="00001.mp4" class="slider-item" controls></video>
-        </div>
-        <div class="video-wrapper">
-          <video src="00105.mp4" class="slider-item" controls></video>
-        </div>
-      </div>
-
-      <button class="button next" onclick="scrollCarousel(1)">&#10095;</button>
-
-
-    </div>
-  </section>
-
-
-  <script>
-    let currentIndex = 1; // 初始显示第二个视频（居中）
-
-    function scrollCarousel(direction) {
-      const carousel = document.querySelector('.carousel');
-      const videos = document.querySelectorAll('.video-wrapper');
-      const videoElements = document.querySelectorAll('.slider-item');
-
-      // 计算新的索引
-      currentIndex += direction;
-      if (currentIndex < 0) currentIndex = videos.length - 1;
-      if (currentIndex >= videos.length) currentIndex = 0;
-
-      // 移动到新的视频
-      const offset = currentIndex * -33.33;
-      carousel.style.transform = `translateX(${offset}%)`;
-
-      // 更新视频的播放状态
-      videoElements.forEach((videoElement, index) => {
-        if (index === currentIndex) {
-          videoElement.play();
-        } else {
-          videoElement.pause();
-          videoElement.currentTime = 0; // 重置视频到开始
-        }
-      });
-    }
-
-    // 初始设置中间视频播放
-    document.querySelectorAll('.slider-item')[currentIndex].play();
-
-  </script> -->
 
   <section class="section">
     <div class="container">
@@ -910,8 +855,40 @@
 
       </div>
     </div>
+    </div> 
+
+    <div class="carousel-container">
+      <button class="video-button left" onclick="moveCarousel(-1)">&#10094;</button>
+      <button class="video-button right" onclick="moveCarousel(1)">&#10095;</button>
+      <div class="carousel" id="carousel">
+        <video src="00001.mp4" style="width: 60%; height: 95%;" controls></video>
+        <video src="00105.mp4" style="width: 60%; height: 95%;" controls></video>
+        <video src="00105.mp4" style="width: 60%; height: 95%;" controls></video>
+      </div>
     </div>
-    
+    <script>
+      let currentIndex = 1;
+
+      function moveCarousel(direction) {
+        const carousel = document.getElementById('carousel');
+        const videos = carousel.querySelectorAll('video');
+        const totalVideos = videos.length;
+        currentIndex = (currentIndex + direction + totalVideos) % totalVideos;
+        updateCarouselPosition();
+      }
+
+      function updateCarouselPosition() {
+        const carousel = document.getElementById('carousel');
+        const videos = carousel.querySelectorAll('video');
+        const offset = -currentIndex * (videos[0].offsetWidth) + (carousel.parentNode.offsetWidth - videos[0].offsetWidth) / 2;
+        carousel.style.transform = `translateX(${offset}px)`;
+      }
+
+      window.addEventListener('resize', updateCarouselPosition);
+      window.addEventListener('load', updateCarouselPosition);
+    </script>
+
+
 
     <div class="columns is-centered">
       <div class="column">
