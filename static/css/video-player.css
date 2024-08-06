@@ -3,14 +3,17 @@
   overflow: hidden;
   position: relative;
 }
+
 .carousel {
   display: flex;
   transition: transform 0.3s ease-in-out;
 }
+
 .carousel video {
-  min-width: 100%;
+  min-width: 60%;
   margin: 0 5px;
 }
+
 .video-button {
   position: absolute;
   top: 50%;
@@ -20,9 +23,11 @@
   cursor: pointer;
   padding: 10px;
 }
+
 .video-button.left {
   left: 10px;
 }
+
 .video-button.right {
   right: 10px;
 }
