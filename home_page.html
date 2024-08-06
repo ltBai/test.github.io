@@ -242,11 +242,15 @@
     });
 
     function updateRowNumbers(tableId) {
-      const table = document.querySelector(`#${tableId}`);
-      const rows = table.querySelectorAll("tbody tr");
+      const rows = document.querySelectorAll("#${tableId} tbody tr");
       rows.forEach((row, index) => {
         row.querySelector("td").innerText = index + 1;
       });
+      // const table = document.querySelector(`#${tableId}`);
+      // const rows = table.querySelectorAll("tbody tr");
+      // rows.forEach((row, index) => {
+      //   row.querySelector("td").innerText = index + 1;
+      // });
     }
 
   </script>
