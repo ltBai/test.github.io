@@ -2,11 +2,14 @@
   width: 70%;
   overflow: hidden;
   position: relative;
+  margin: 0 auto;
 }
 
 .carousel {
   display: flex;
   transition: transform 0.3s ease-in-out;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .carousel video {
