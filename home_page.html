@@ -801,10 +801,18 @@
   <section>
     <div class="carousel-container">
       <div class="carousel-1">
-        <video src="00105.mp4" style="width: 60%; height: 95%;" controls></video>
-        <video src="00001.mp4" style="width: 60%; height: 95%;" controls></video>
-        <video src="00105.mp4" style="width: 60%; height: 95%;" controls></video>
+        <div class="video-wrapper">
+          <video src="00105.mp4" class="slider-item" controls></video>
+        </div>
+        <div class="video-wrapper">
+          <video src="00001.mp4" class="slider-item" controls></video>
+        </div>
+        <div class="video-wrapper">
+          <video src="00105.mp4" class="slider-item" controls></video>
+        </div>
       </div>
+      <button class="button-video pre" onclick="scrollCarousel(-1)">&#10094;</button>
+      <button class="button-video next" onclick="scrollCarousel(1)">&#10095;</button>
 
 
     </div>
@@ -812,25 +820,32 @@
 
 
   <script>
-    let currentIndex = 1;
+    let currentIndex = 1; // 初始显示第二个视频
 
-    function moveCarousel(direction) {
-      const carousel = document.getElementById('carousel');
-      const videos = carousel.querySelectorAll('video');
-      const totalVideos = videos.length;
-      currentIndex = (currentIndex + direction + totalVideos) % totalVideos;
-      updateCarouselPosition();
+    function scrollCarousel(direction) {
+      const carousel = document.querySelector('.carousel');
+      const videos = document.querySelectorAll('.video-wrapper');
+
+      // 计算新的索引
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = videos.length - 1;
+      if (currentIndex >= videos.length) currentIndex = 0;
+
+      // 移动到新的视频
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // 更新视频的激活状态
+      videos.forEach((video, index) => {
+        if (index === currentIndex) {
+          video.classList.add('active');
+        } else {
+          video.classList.remove('active');
+        }
+      });
     }
 
-    function updateCarouselPosition() {
-      const carousel = document.getElementById('carousel');
-      const videos = carousel.querySelectorAll('video');
-      const offset = -currentIndex * (videos[0].offsetWidth) + (carousel.parentNode.offsetWidth - videos[0].offsetWidth) / 2;
-      carousel.style.transform = `translateX(${offset}px)`;
-    }
-
-    window.addEventListener('resize', updateCarouselPosition);
-    window.addEventListener('load', updateCarouselPosition);
+    // 初始设置激活视频
+    document.querySelectorAll('.video-wrapper')[currentIndex].classList.add('active');
   </script>
 
   <section class="section">

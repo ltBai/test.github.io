@@ -14,14 +14,27 @@
   margin-right: 0;
 }
 
-.carousel-1 video {
-  min-width: 60%;
-  position: relative;
-  margin-left: 20%;
-  margin-right: 20%;
+.video-wrapper {
+  flex: 0 0 33.33%;
+  /* 显示三个视频，其中一个居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
 }
 
-.video-button {
+.video-wrapper.active {
+  flex: 0 0 100%;
+  opacity: 1;
+}
+
+.slider-item {
+  width: 80%;
+  /* 根据需要调整视频尺寸 */
+}
+
+.button-video {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -31,10 +44,10 @@
   padding: 10px;
 }
 
-.video-button.left {
+.button-video-pre {
   left: 10px;
 }
 
-.video-button.right {
+.button-video-next {
   right: 10px;
 }
