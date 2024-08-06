@@ -856,11 +856,32 @@
       </div>
     </div>
     </div>
+    <div class="carousel-container">
+      <button class="button left" onclick="moveCarousel(-1)">&#10094;</button>
+      <button class="button right" onclick="moveCarousel(1)">&#10095;</button>
+      <div class="carousel" id="carousel">
+        <video src="00001.mp4" style="width: 80%; height: 95%;" controls></video>
+        <video src="00105.mp4" style="width: 80%; height: 95%;" controls></video>
+      </div>
+    </div>
+    <script>
+      let currentIndex = 0;
 
-    <div class="container">
+      function moveCarousel(direction) {
+        const carousel = document.getElementById('carousel');
+        const videos = carousel.querySelectorAll('video');
+        const totalVideos = videos.length;
+        currentIndex = (currentIndex + direction + totalVideos) % totalVideos;
+        const offset = -currentIndex * (videos[0].offsetWidth + 10); // 10 是两个视频间的 margin
+        carousel.style.transform = `translateX(${offset}px)`;
+      }
+
+      window.addEventListener('resize', () => moveCarousel(0)); // 确保在窗口大小改变时，位置正确
+    </script>
+
+    <!-- <div class="container">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths" style="width: 100%;">
-          <!-- <div class="column" style="width: 100%;"> -->
+        <div class="column is-four-fifths" style="width: 100%;"> 
           <h2 class="title is-3">Video Examples</h2>
           <div class="content has-text-justified">
             <p style="text-align: center;" , class="mt-3"><strong>All data are newly collected and annotated
@@ -887,7 +908,7 @@
 
       </div>
     </div>
-    </div>
+    </div> -->
 
 
     <div class="columns is-centered">
