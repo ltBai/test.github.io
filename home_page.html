@@ -866,14 +866,14 @@
       </div>
     </div>
     <script>
-      let currentIndex = 0;
+      let currentIndex = 1;
 
       function moveCarousel(direction) {
         const carousel = document.getElementById('carousel');
         const videos = carousel.querySelectorAll('video');
         const totalVideos = videos.length;
         currentIndex = (currentIndex + direction + totalVideos) % totalVideos;
-        const offset = -currentIndex * (videos[0].offsetWidth ); // 10 是两个视频间的 margin
+        const offset = -currentIndex * (videos[0].offsetWidth); // 10 是两个视频间的 margin
         carousel.style.transform = `translateX(${offset}px)`;
       }
 
