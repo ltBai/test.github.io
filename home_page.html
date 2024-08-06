@@ -856,11 +856,10 @@
       </div>
     </div>
     </div>
-    <div class="shipin-container">
+    <div class="carousel-container">
       <button class="button left" onclick="moveCarousel(-1)">&#10094;</button>
       <button class="button right" onclick="moveCarousel(1)">&#10095;</button>
-      <div class="shipin" id="shipin">
-        <video src="00001.mp4" style="width: 80%; height: 95%;" controls></video>
+      <div class="carousel" id="carousel">
         <video src="00001.mp4" style="width: 80%; height: 95%;" controls></video>
         <video src="00105.mp4" style="width: 80%; height: 95%;" controls></video>
       </div>
@@ -869,7 +868,7 @@
       let currentIndex = 0;
 
       function moveCarousel(direction) {
-        const carousel = document.getElementById('shipin');
+        const carousel = document.getElementById('carousel');
         const videos = carousel.querySelectorAll('video');
         const totalVideos = videos.length;
         currentIndex = (currentIndex + direction + totalVideos) % totalVideos;
