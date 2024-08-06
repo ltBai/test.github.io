@@ -232,24 +232,27 @@
 
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
       updateRowNumbers("#results");
       updateRowNumbers("#results_1");
-
-      document.querySelectorAll("#results, #results_1").forEach(table => {
-        table.addEventListener("click", () => updateRowNumbers(table.id));
+  
+      document.querySelector("#results").addEventListener("click", function() {
+        updateRowNumbers("#results");
+      });
+  
+      document.querySelector("#results_1").addEventListener("click", function() {
+        updateRowNumbers("#results_1");
       });
     });
-
+  
     function updateRowNumbers(tableId) {
-      const table = document.querySelector(`#${tableId}`);
-      const rows = table.querySelectorAll("tbody tr");
+      const rows = document.querySelectorAll(`${tableId} tbody tr`);
       rows.forEach((row, index) => {
         row.querySelector("td").innerText = index + 1;
       });
     }
-
   </script>
+
 
   <!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
