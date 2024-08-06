@@ -64,20 +64,19 @@
 .carousel {
   display: flex;
   transition: transform 0.3s ease-in-out;
+  transform: translateX(-33.33%);
 }
 
 .video-wrapper {
-  flex: 0 0 33.33%; /* 每个视频占据1/3的宽度 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 0 0 33.33%;
+  max-width: 100%;
   overflow: hidden;
   position: relative;
+  padding: 0 10px;
 }
 
 .slider-item {
-  width: 100%; /* 视频填满容器 */
-  min-width: 100%;
+  width: 100%;
   transition: transform 0.3s ease-in-out;
 }
 
