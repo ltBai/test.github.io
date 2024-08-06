@@ -798,6 +798,37 @@
     </div>
   </section>
 
+  <div class="carousel-container">
+    <button class="video-button left" onclick="moveCarousel(-1)">&#10094;</button>
+    <button class="video-button right" onclick="moveCarousel(1)">&#10095;</button>
+    <div class="carousel" id="carousel">
+      <video src="00001.mp4" style="width: 60%; height: 95%;" controls></video>
+      <video src="00105.mp4" style="width: 60%; height: 95%;" controls></video>
+      <video src="00105.mp4" style="width: 60%; height: 95%;" controls></video>
+    </div>
+  </div>
+  <script>
+    let currentIndex = 1;
+
+    function moveCarousel(direction) {
+      const carousel = document.getElementById('carousel');
+      const videos = carousel.querySelectorAll('video');
+      const totalVideos = videos.length;
+      currentIndex = (currentIndex + direction + totalVideos) % totalVideos;
+      updateCarouselPosition();
+    }
+
+    function updateCarouselPosition() {
+      const carousel = document.getElementById('carousel');
+      const videos = carousel.querySelectorAll('video');
+      const offset = -currentIndex * (videos[0].offsetWidth) + (carousel.parentNode.offsetWidth - videos[0].offsetWidth) / 2;
+      carousel.style.transform = `translateX(${offset}px)`;
+    }
+
+    window.addEventListener('resize', updateCarouselPosition);
+    window.addEventListener('load', updateCarouselPosition);
+  </script>
+
   <section class="section">
     <div class="container">
       <div class="columns is-centered has-text-centered">
@@ -855,40 +886,7 @@
 
       </div>
     </div>
-    </div> 
-
-    <div class="carousel-container">
-      <button class="video-button left" onclick="moveCarousel(-1)">&#10094;</button>
-      <button class="video-button right" onclick="moveCarousel(1)">&#10095;</button>
-      <div class="carousel" id="carousel">
-        <video src="00001.mp4" style="width: 60%; height: 95%;" controls></video>
-        <video src="00105.mp4" style="width: 60%; height: 95%;" controls></video>
-        <video src="00105.mp4" style="width: 60%; height: 95%;" controls></video>
-      </div>
     </div>
-    <script>
-      let currentIndex = 1;
-
-      function moveCarousel(direction) {
-        const carousel = document.getElementById('carousel');
-        const videos = carousel.querySelectorAll('video');
-        const totalVideos = videos.length;
-        currentIndex = (currentIndex + direction + totalVideos) % totalVideos;
-        updateCarouselPosition();
-      }
-
-      function updateCarouselPosition() {
-        const carousel = document.getElementById('carousel');
-        const videos = carousel.querySelectorAll('video');
-        const offset = -currentIndex * (videos[0].offsetWidth) + (carousel.parentNode.offsetWidth - videos[0].offsetWidth) / 2;
-        carousel.style.transform = `translateX(${offset}px)`;
-      }
-
-      window.addEventListener('resize', updateCarouselPosition);
-      window.addEventListener('load', updateCarouselPosition);
-    </script>
-
-
 
     <div class="columns is-centered">
       <div class="column">

@@ -8,6 +8,7 @@
 
 .carousel {
   display: flex;
+  position: relative;
   transition: transform 0.3s ease-in-out;
   margin-left: 0;
   margin-right: 0;
@@ -15,6 +16,7 @@
 
 .carousel video {
   min-width: 60%;
+  position: relative;
   margin-left: 20%;
   margin-right: 20%;
 }
