@@ -2,7 +2,7 @@
   width: 70%;
   overflow: hidden;
   position: relative;
-  margin: 0 auto;
+  margin: 0 0;
 }
 
 .carousel {
@@ -14,7 +14,7 @@
 
 .carousel video {
   min-width: 60%;
-  margin: 0 5px;
+  margin: 0 20%;
 }
 
 .video-button {
