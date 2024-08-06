@@ -861,6 +861,7 @@
       <button class="button right" onclick="moveCarousel(1)">&#10095;</button>
       <div class="shipin" id="shipin">
         <video src="00001.mp4" style="width: 80%; height: 95%;" controls></video>
+        <video src="00001.mp4" style="width: 80%; height: 95%;" controls></video>
         <video src="00105.mp4" style="width: 80%; height: 95%;" controls></video>
       </div>
     </div>
@@ -872,7 +873,7 @@
         const videos = carousel.querySelectorAll('video');
         const totalVideos = videos.length;
         currentIndex = (currentIndex + direction + totalVideos) % totalVideos;
-        const offset = -currentIndex * (videos[0].offsetWidth + 10); // 10 是两个视频间的 margin
+        const offset = -currentIndex * (videos[0].offsetWidth ); // 10 是两个视频间的 margin
         carousel.style.transform = `translateX(${offset}px)`;
       }
 
