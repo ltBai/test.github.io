@@ -1,20 +1,18 @@
 /* styles.css */
-body {
+/* body {
     margin: 0;
     padding: 0;
 }
 
 .container {
     position: relative;
-    width: max-content;
-    /* Adjusts width to fit the video */
+    width: max-content; 
 }
 
 video {
     display: block;
-    width: 100%;
-    /* Adjust to video width */
-}
+    width: 100%; 
+} */
 
 .text-overlay {
     position: absolute;
