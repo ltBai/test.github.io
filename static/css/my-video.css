@@ -1,0 +1,33 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    width: max-content;
+    /* Adjusts width to fit the video */
+}
+
+video {
+    display: block;
+    width: 100%;
+    /* Adjust to video width */
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background for text */
+    color: white;
+    padding: 10px;
+    width: 100%;
+    /* Ensures text spans the width of the video */
+    box-sizing: border-box;
+    /* Includes padding in width calculation */
+    text-align: left;
+    /* Align text to the left */
+}
