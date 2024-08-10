@@ -58,6 +58,7 @@ body {
 
 .publication-title {
   font-family: 'Söhne', sans-serif;
+  color: #000;
   font-weight: inherit;
   font-style: inherit;
   font-size: 3rem;
