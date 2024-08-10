@@ -173,8 +173,11 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <!-- <h2 class="title is-3">Introduction</h2> -->
-          <div class="content has-text-justified">
+          <div class="content has-text-justified" style="text-align: center;">
             All videos on this page are at 1x real time.
+          </div>
+          <div>
+            <video src="00105.mp4" controls></video>
           </div>
         </div>
       </div>
@@ -184,217 +187,22 @@
 
 
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      updateRowNumbers("#results");
-      updateRowNumbers("#results_1");
-
-      document.querySelector("#results").addEventListener("click", function () {
-        updateRowNumbers("#results");
-      });
-
-      document.querySelector("#results_1").addEventListener("click", function () {
-        updateRowNumbers("#results_1");
-      });
-    });
-
-    function updateRowNumbers(tableId) {
-      const rows = document.querySelectorAll(`${tableId} tbody tr`);
-      rows.forEach((row, index) => {
-        row.querySelector("td").innerText = index + 1;
-      });
-    }
-  </script>
-
-
-  <!-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      updateRowNumbers();
-      document.querySelector("#results").addEventListener("click", updateRowNumbers);
-    });
-
-    function updateRowNumbers() {
-      const rows = document.querySelectorAll("#results tbody tr");
-      rows.forEach((row, index) => {
-        row.querySelector("td").innerText = index + 1;
-      });
-    }
-  </script> -->
-
-  <!-- <section class="section">
-    <div class="container">
-
-      <div class="columns is-centered">
-        <div class="column is-full has-text-centered content">
-
-          <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
-          <div class="content">
-            <p class="mt-3">Accuracy scores on Video-MME are presented for short, medium, and long videos,
-              taking the corresponding subtitles as input or not.
-            </p>
-            <div class="video-duration">
-              <p>
-                <strong>Short Video:</strong> &lt; 2min &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <strong>Medium Video:</strong> 4min ~ 15min &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <strong>Long Video:</strong> 30min ~ 60min
-              </p>
-              <p>
-                By default, this leaderboard is sorted by results with subtitles. To view other sorted
-                results, please click on the corresponding cell.
-              </p>
-            </div>
-
-            <p style="margin-top: -20px;">
-              <strong style="color: #22a56e; font-size: 18px;">Green date</strong> indicates the newly
-              added/updated models &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              - indicates closed-source models
-            </p>
-            <table class="js-sort-table" id="results_1" style="margin-left: auto; margin-right: auto;">
-              <thead>
-                <tr>
-                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px;"
-                    data-js-sort-colNum="none"><strong>#</strong></th>
-                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 180px;"
-                    data-js-sort-colNum="none"><strong>Model</strong></th>
-                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px;"
-                    data-js-sort-colNum="none"><strong>LLM <br>Params</strong></th>
-                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 100px;"
-                    data-js-sort-colNum="none"><strong>Frames</strong></th>
-                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 110px;"
-                    data-js-sort-colNum="none"><strong>Date</strong></th>
-                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="6"><strong>Overall
-                      (%)</strong></th>
-                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="8"><strong>Short
-                      Video (%)</strong></th>
-                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="10"><strong>Medium
-                      Video (%)</strong></th>
-                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="12"><strong>Long
-                      Video (%)</strong></th>
-                </tr>
-                <tr>
-                  <th data-js-sort-colNum="5"><strong>w/o subs</strong></th>
-                  <th data-js-sort-colNum="6"><strong>w subs</strong></th>
-                  <th data-js-sort-colNum="7"><strong>w/o subs</strong></th>
-                  <th data-js-sort-colNum="8"><strong>w subs</strong></th>
-                  <th data-js-sort-colNum="9"><strong>w/o subs</strong></th>
-                  <th data-js-sort-colNum="10"><strong>w subs</strong></th>
-                  <th data-js-sort-colNum="11"><strong>w/o subs</strong></th>
-                  <th data-js-sort-colNum="12"><strong>w subs</strong></th>
-                </tr>
-              </thead>
-              <tbody>
-
-                <tr>
-                  <td style="vertical-align: middle;"></td>
-                  <td style="text-align: left; padding: 2px 10px;">
-                    <b class="">
-                      <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf"
-                        class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini 1.5 Pro</a>
-                      <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
-                    </b>
-                  </td>
-                  <td style="vertical-align: middle;">- </td>
-                  <td style="vertical-align: middle;">1/2 fps<sup>1*</sup> </td>
-                  <td style="vertical-align: middle;">2024-06-15</td>
-                  <td style="vertical-align: middle;"><b class="">75.0</b></td>
-                  <td style="vertical-align: middle;"><b class="">81.3</b></td>
-                  <td style="vertical-align: middle;">81.7</td>
-                  <td style="vertical-align: middle;">84.5</td>
-                  <td style="vertical-align: middle;">74.3</td>
-                  <td style="vertical-align: middle;">81.0</td>
-                  <td style="vertical-align: middle;">67.4</td>
-                  <td style="vertical-align: middle;">77.4</td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: middle;"></td>
-                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
-                        href="https://openai.com/index/hello-gpt-4o/" class="ext-link"
-                        style="font-size: 16px; margin-left: 5px;">GPT-4o
-                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p>
-                      </a></b></td>
-                  <td style="vertical-align: middle;">- </td>
-                  <td style="vertical-align: middle;">384<sup>2*</sup> </td>
-                  <td style="vertical-align: middle;">2024-06-15</td>
-                  <td style="vertical-align: middle;"><b class="">71.9</b></td>
-                  <td style="vertical-align: middle;"><b class="">77.2</b></td>
-                  <td style="vertical-align: middle;">80.0</td>
-                  <td style="vertical-align: middle;">82.8</td>
-                  <td style="vertical-align: middle;">70.3</td>
-                  <td style="vertical-align: middle;">76.6</td>
-                  <td style="vertical-align: middle;">65.3</td>
-                  <td style="vertical-align: middle;">72.1</td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: middle;"></td>
-                  <td style="text-align: left; padding: 2px 10px;">
-                    <b class="">
-                      <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf"
-                        class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini 1.5 Flash</a>
-                      <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
-                    </b>
-                  </td>
-                  <td style="vertical-align: middle;">- </td>
-                  <td style="vertical-align: middle;">1/2 fps<sup>1*</sup> </td>
-                  <td style="vertical-align: middle;">2024-06-15</td>
-                  <td style="vertical-align: middle;"><b class="">70.3</b></td>
-                  <td style="vertical-align: middle;"><b class="">75.0</b></td>
-                  <td style="vertical-align: middle;">78.8</td>
-                  <td style="vertical-align: middle;">79.8</td>
-                  <td style="vertical-align: middle;">68.8</td>
-                  <td style="vertical-align: middle;">74.7</td>
-                  <td style="vertical-align: middle;">61.1</td>
-                  <td style="vertical-align: middle;">68.8</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <p style=" text-align: left;">
-              1* The short and medium videos are sampled at 1 fps, while the long videos are sampled at 2
-              fps to ensure the stability of the API.
-              </br>2* The videos less than 384 seconds are sampled at 1 fps, and for those longer than 384
-              seconds, we extract 384 frames uniformly. All the frames are resized to 512x512 resolution
-              to fit within GPT-4o’s max context length.
-            </p>
-
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section> -->
-
-
-  <!-- DATASET SECTION -->
-  <!-- <section class="hero is-light is-small">
-    <div class="hero-body has-text-centered">
-      <h1 class="title is-1 mathvista_other">
-        <span class="mathvista_other" style="vertical-align: middle">Benchmark</span>
-      </h1>
-    </div>
-  </section> -->
 
   <section class="section">
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths" style="width: 100%;">
-          <!-- <h2 class="title is-3">Data Examples</h2> -->
-          <div class="content has-text-justified">
-            <div id="results-carousel" class="carousel results-carousel">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths" style="width: 100%;">
+        <!-- <h2 class="title is-3">Data Examples</h2> -->
+        <div class="content has-text-justified">
+          <div id="results-carousel" class="carousel results-carousel">
 
-              <div class="content has-text-centered">
-                <video src="00105.mp4" controls></video>
-              </div>
-
-              <div class="content has-text-centered">
-                <video src="00105.mp4" controls></video>
-              </div>
-
+            <div class="content has-text-centered">
+              <video src="00105.mp4" controls></video>
             </div>
+
           </div>
         </div>
-
       </div>
+
 
     </div>
   </section>
