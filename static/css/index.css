@@ -39,7 +39,15 @@ body {
 }
 
 
-.publication-title {}
+.publication-subtitle {
+  font-family: 'Söhne', sans-serif;
+  font-weight: bold;
+  /* 或使用更具体的值如 700 */
+  font-style: inherit;
+  font-size: 1.4175rem;
+  -webkit-font-smoothing: antialiased;
+
+}
 
 .publication-banner {
   max-height: parent;
@@ -58,10 +66,13 @@ body {
 
 .publication-title {
   font-family: 'Söhne', sans-serif;
-  color: #000;
-  font-weight: inherit;
+  font-weight: bold;
+  /* 或使用更具体的值如 700 */
+  color: #000000;
   font-style: inherit;
   font-size: 3rem;
+  -webkit-font-smoothing: antialiased;
+
 }
 
 .publication-authors {
