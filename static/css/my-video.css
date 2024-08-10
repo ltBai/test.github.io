@@ -1,17 +1,11 @@
 /* styles.css */
 
-
+/* 
 .container {
     position: relative;
-    width: max-content;
-    /* Adjusts width to fit the video */
-}
+    width: max-content; 
+} */
 
-video {
-    display: block;
-    width: 100%;
-    /* Adjust to video width */
-}
 
 .text-overlay {
     position: absolute;
